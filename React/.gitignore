@@ -1,0 +1,22 @@
+# 依存パッケージ（npm install で復元できる）
+node_modules/
+
+# Vite ビルド成果物
+dist/
+dist-ssr/
+
+# ローカル環境変数（秘密情報が入る可能性）
+.env
+.env.local
+.env.*.local
+
+# エディタ設定
+.vscode/
+.idea/
+
+# OS 生成ファイル
+.DS_Store
+Thumbs.db
+
+# Vite キャッシュ
+*.local
