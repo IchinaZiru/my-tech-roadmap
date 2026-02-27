@@ -11,8 +11,8 @@
 import { useState, useEffect } from 'react'
 
 // ここにカスタムフックを定義する
-// function useLocalStorage(key, initialValue) { ... }
-// function useFetch(url) { ... }
+// function useLocalStorage<T>(key: string, initialValue: T) { ... }
+// function useFetch<T>(url: string) { ... }
 
 export default function CustomHooksLesson() {
   // ここで作ったカスタムフックを使う

@@ -14,7 +14,12 @@ import { useState } from 'react'
 // import UseContextLesson   from './lessons/11-useContext/UseContextLesson'
 // ────────────────────────────────────────────────────────────────────────
 
-const LESSONS = [
+type Lesson = {
+  label: string
+  Component: (() => JSX.Element) | null
+}
+
+const LESSONS: Lesson[] = [
   { label: '01 JSX',           Component: null },
   { label: '02 Components',    Component: null },
   { label: '03 Props',         Component: null },

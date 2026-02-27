@@ -11,14 +11,20 @@
 
 import { useState } from 'react'
 
-const INITIAL_TODOS = [
+type Todo = {
+  id: number
+  text: string
+  done: boolean
+}
+
+const INITIAL_TODOS: Todo[] = [
   { id: 1, text: 'JSXを理解する',    done: false },
   { id: 2, text: 'useStateを覚える', done: false },
   { id: 3, text: 'useEffectを学ぶ',  done: false },
 ]
 
 export default function ListsLesson() {
-  const [todos, setTodos] = useState(INITIAL_TODOS)
+  const [todos, setTodos] = useState<Todo[]>(INITIAL_TODOS)
   // ここに実装する
 
   return (

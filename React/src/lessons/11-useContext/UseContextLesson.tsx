@@ -11,7 +11,7 @@
 import { useState, useContext, createContext } from 'react'
 
 // 1. Context を作る
-// const ThemeContext = createContext('light')
+// const ThemeContext = createContext<'light' | 'dark'>('light')
 
 // 2. Contextを使う深い子コンポーネント（Propsは受け取らない）
 // function ThemedButton() { ... }
@@ -20,7 +20,7 @@ import { useState, useContext, createContext } from 'react'
 // function ContentArea() { ... }
 
 export default function UseContextLesson() {
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState<'light' | 'dark'>('light')
 
   return (
     // 4. Provider で囲んで value を渡す
