@@ -49,19 +49,71 @@ import JsxLesson from './lessons/01-jsx/JsxLesson'
 
 ### 概念
 <!-- JSXとは何か、1〜3行で書く -->
+Java Script Xml: JavaScript内にHTMLのような見た目で記述ができるようになる拡張
+
+tsxの場合はTypeScript + JSX
 
 ### 最小実装
-```jsx
-// 最もシンプルなJSXのコードを書く
+```tsx
+export default function JsxLesson() {
+  // ここに実装する
+  const name = "おにぎり";
+  const price = 150;
+
+  return (
+    <div>
+      <h2>Lesson 01: JSX</h2>
+      {/* ここにコードを追加する */}
+      <h1
+      style ={{
+        color: "blue",
+        backgroundColor: "lightblue",
+        padding: "10px",
+        borderRadius: "5px",
+        fontSize:"24px"
+      }}
+      >
+        Hello, {name}!</h1>
+      <p className="highlight">価格: ¥{price}</p>
+    </div>
+  )
+}
 ```
 
 ### 実務での型
-```jsx
-// よく使うパターンを書く
+```tsx
+//変数を定義する
+const name = "おにぎり";
+
+//定義した変数を{}で埋め込む
+<h1>Hello,{name}</h1>
 ```
 
 ### 落とし穴
 <!-- よくあるエラーと回避策 -->
+TypeScriptは型推論があるからstringやnumberなどを定義しなくても自動で判断してくれる(実務だと推論に任せるのが慣習)
 
 ### 説明できる状態
 <!-- 口頭で人に説明できるようになったら1〜2文でまとめる -->
+始めに`const xxx`で型を定義し、return以降のHTML記述の中に`{xxx}`で利用することができる。
+CSSラベルを割り当てるときは`class = test`ではなく、`className = test`と書き、ルートのApp.cssで
+```css
+.test {
+  color: #e11d48;
+  font-weight: bold;
+}
+```
+と書きcssを当てられる。
+tsx及びjsxでオブジェクトを渡すときには`{}`で囲む
+`{}`で書かれたオブジェクトを渡すときはさらに`{}`で囲む(style等)
+
+```tsx
+// 1. JS 側のオブジェクト
+const style = { color: "red" };
+
+// 2. JSX に渡すときは、{} で囲む
+<div style={style}>
+// あるいは一気に書く
+<div style={{ color: "red" }}>
+
+```

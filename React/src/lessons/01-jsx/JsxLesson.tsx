@@ -9,11 +9,24 @@
 
 export default function JsxLesson() {
   // ここに実装する
+  const name = "おにぎり";
+  const price = 150;
 
   return (
     <div>
       <h2>Lesson 01: JSX</h2>
       {/* ここにコードを追加する */}
+      <h1
+      style ={{
+        color: "blue",
+        backgroundColor: "lightblue",
+        padding: "10px",
+        borderRadius: "5px",
+        fontSize:"24px"
+      }}
+      >
+        Hello, {name}!</h1>
+      <p className="highlight">価格: ¥{price}</p>
     </div>
   )
 }
