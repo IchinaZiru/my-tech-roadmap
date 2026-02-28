@@ -66,19 +66,31 @@ import UseStateLesson from './lessons/04-useState/UseStateLesson'
 
 ### 概念
 <!-- useState とは何か、1〜3行で -->
-
+関数コンポーネントに更新関数を用意してその値を更新すると画面が自動で変わる仕組み
 ### 最小実装
 ```jsx
-// 最もシンプルなuseState使用例を書く
+const [count, setCount] = useState(0)
+
+  function handleClick() {
+    setCount(count + 1)
+  }
+
+<button onClick={handleClick}>
+button
+</button>
 ```
 
 ### 実務での型
 ```jsx
-// よく使うパターンを書く
+  function handleIncrement() {
+    setCount(count => count + 1)
+  }
 ```
 
 ### 落とし穴
 <!-- よくあるエラーと回避策 -->
-
+Reactは次のstateを保存した後に新しい値でコンポーネントを再レンダーしUIを更新する
+更新用関数をわたさないと、複数関数を呼び出されても更新は一回しか変更されない
 ### 説明できる状態
 <!-- 口頭で人に説明できるようになったら1〜2文でまとめる -->
+useState は「コンポーネントが記憶を持つ仕組み」。const [値, 更新関数] = useState(初期値) と書き、更新関数を呼ぶと画面が再描画される。
