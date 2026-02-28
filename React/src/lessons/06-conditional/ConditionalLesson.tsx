@@ -9,13 +9,35 @@
 
 import { useState } from 'react'
 
+function Alert({ message }: { message: string }) {
+  if (!message) return null
+  return <p>{message}</p>
+}
+
+
 export default function ConditionalLesson() {
   // ここに実装する
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [message, setMessage] = useState('')
 
+  function handleToggleLogin() {
+    setIsLoggedIn(prev => !prev)
+    setMessage('')
+  }
+
+  //
   return (
     <div>
       <h2>Lesson 06: 条件付きレンダリング</h2>
       {/* 条件分岐のサンプルをここに作る */}
+      <button onClick={handleToggleLogin}>
+        {isLoggedIn ? 'ログアウト' : 'ログイン'}
+      </button>
+      {isLoggedIn && <p>ようこそ！</p>}
+      {isLoggedIn && <button onClick={() => setMessage('成功しました!')}>成功メッセージを出す</button>}
+      {isLoggedIn && <button onClick={() => setMessage('エラーが発生しました!')}>エラーメッセージを出す</button>}
+      {isLoggedIn && <button onClick={() => setMessage('')}>消す</button>}
+      <Alert message={message} />
     </div>
   )
 }

@@ -74,15 +74,31 @@ import ConditionalLesson from './lessons/06-conditional/ConditionalLesson'
 ## 学習ノート（実装後に自分で埋める）
 
 ### 概念
-
+三項演算子によってifを一行で書くことができる
+&&を使用することでtrue時,false時の条件にそった処理に進むことができる
 ### 最小実装
-```jsx
+```tsx
+      <button onClick={() => {
+        setIsLoggedIn(!isLoggedIn)
+        setMessage('')}}>
+        {isLoggedIn ? 'ログアウト' : 'ログイン'}
+      </button>
+
+      {isLoggedIn && <p>ようこそ！</p>}
 ```
 
 ### 実務での型
-```jsx
+```tsx
+  function handleToggleLogin() {
+    setIsLoggedIn(prev => !prev)
+    setMessage('')
+  }
 ```
 
 ### 落とし穴
-
+メッセージを出すときに空文字の場合にnullを返さないとタグが残ってしまう可能性がある
 ### 説明できる状態
+三項演算子は `xxxx ? true : false`で分岐
+&&によって分岐後の処理を繋げることができる
+null返却で安全にタグを消すことができる
+アロー関数に`{}`を使うと複数処理を入れることができる
