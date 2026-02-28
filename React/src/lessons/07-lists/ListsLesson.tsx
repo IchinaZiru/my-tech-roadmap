@@ -25,12 +25,43 @@ const INITIAL_TODOS: Todo[] = [
 
 export default function ListsLesson() {
   const [todos, setTodos] = useState<Todo[]>(INITIAL_TODOS)
+  //Todo 残り件数計算
+  const unfinishedCount : number = todos.filter(t => !t.done).length
   // ここに実装する
+  //input管理
+  const [input, setInput] = useState('')
+
+  //Todo追加関数
+  function addTodo(text: string){
+    setTodos([...todos, {id: Date.now(), text: text, done: false}])
+    setInput('')
+  }
+
+  //Todo完了ステータス切替関数
+  function toggleTodo(id: number){
+    setTodos(todos.map(t =>
+    t.id === id ? {...t, done: !t.done} : t
+    ))
+  }
+
+
 
   return (
     <div>
       <h2>Lesson 07: リストとkey</h2>
       {/* Todo リストをここに作る */}
+      <input type ="text" value={input} onChange={(e) => setInput(e.target.value)} placeholder="Todoを入力" />
+      <button onClick={() => addTodo(input)}>追加</button>
+
+      {todos.map(todo => (
+        <li key={todo.id}
+        onClick={() => toggleTodo(todo.id)}
+        style={{textDecoration: todo.done ? 'line-through' : 'none'}}>
+          {todo.text}
+        </li>
+        
+      ))}
+      <p> 残り件数 : {unfinishedCount}</p>
     </div>
   )
 }

@@ -78,9 +78,28 @@ import ListsLesson from './lessons/07-lists/ListsLesson'
 ## 学習ノート（実装後に自分で埋める）
 
 ### 概念
-
+.map()で配列の全要素を変換
+`<li>`では一意に判断するkey必要
 ### 最小実装
 ```jsx
+  //Todo 残り件数計算
+  const unfinishedCount : number = todos.filter(t => !t.done).length
+  // ここに実装する
+  //input管理
+  const [input, setInput] = useState('')
+
+  //Todo追加関数
+  function addTodo(text: string){
+    setTodos([...todos, {id: Date.now(), text: text, done: false}])
+    setInput('')
+  }
+
+  //Todo完了ステータス切替関数
+  function toggleTodo(id: number){
+    setTodos(todos.map(t =>
+    t.id === id ? {...t,done: !t.done} : t
+    ))
+  }
 ```
 
 ### 実務での型
@@ -90,3 +109,4 @@ import ListsLesson from './lessons/07-lists/ListsLesson'
 ### 落とし穴
 
 ### 説明できる状態
+`t.id === id ? {...t, done: !t.done} : t`ここでは配列の後ろのdoneだけを上書き
