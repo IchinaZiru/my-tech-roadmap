@@ -5,8 +5,8 @@ import JsxLesson          from './lessons/01-jsx/JsxLesson'
 import ComponentsLesson   from './lessons/02-components/ComponentsLesson'
 import PropsLesson        from './lessons/03-props/PropsLesson'
 import UseStateLesson     from './lessons/04-useState/UseStateLesson'
-// import EventsLesson       from './lessons/05-events/EventsLesson'
-// import ConditionalLesson  from './lessons/06-conditional/ConditionalLesson'
+import EventsLesson       from './lessons/05-events/EventsLesson'
+import ConditionalLesson  from './lessons/06-conditional/ConditionalLesson'
 // import ListsLesson        from './lessons/07-lists/ListsLesson'
 // import UseEffectLesson    from './lessons/08-useEffect/UseEffectLesson'
 // import FormsLesson        from './lessons/09-forms/FormsLesson'
@@ -24,8 +24,8 @@ const LESSONS: Lesson[] = [
   { label: '02 Components',    Component: ComponentsLesson },
   { label: '03 Props',         Component: PropsLesson },
   { label: '04 useState',      Component: UseStateLesson },
-  { label: '05 Events',        Component: null },
-  { label: '06 Conditional',   Component: null },
+  { label: '05 Events',        Component: EventsLesson },
+  { label: '06 Conditional',   Component: ConditionalLesson },
   { label: '07 Lists',         Component: null },
   { label: '08 useEffect',     Component: null },
   { label: '09 Forms',         Component: null },

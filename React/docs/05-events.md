@@ -67,15 +67,45 @@ import EventsLesson from './lessons/05-events/EventsLesson'
 ## 学習ノート（実装後に自分で埋める）
 
 ### 概念
-
+onClick : クリックされたときに発火するイベント
+onChange : 入力値が変わった時のイベント
+onKeyDown : キーが入力された時のイベント
 ### 最小実装
-```jsx
+```tsx
+  // クリックイベントのハンドラ
+  function handleClick() {
+    setText(`hello`);
+  }
+
+  //テキスト入力のイベントハンドラ
+  function handleChange(e){
+    setText(e.target.value);
+  }
+
+  //Enterキーのイベントハンドラ
+  function handleKeyDown(e){
+    if(e.key === `Enter`){
+      setText(e.target.value);
+    }
+  }
 ```
 
 ### 実務での型
-```jsx
+```tsx
+<button onClick={handleChange}>
+<input onChange={handleChange}>
+<input onKeyDown={handleKeyDown}>
 ```
 
 ### 落とし穴
-
+様々な場合にイベントは仕様可能
+イベントハンドラに渡す関数は渡すべきなのであって、呼び出すものではない
+イベントハンドラをインラインで定義したい場合は無名関数でラップする
+```tsx
+<button onClick={() => alert('You clicked me!')}>
+```
+onChangeではe.target.value 
+onKeyDown では e.currentTarget.value が安全
 ### 説明できる状態
+onClickはクリック時、onChangeは変更時、onKeyDownはボタンの入力時に発火するイベントハンドラ
+イベントハンドラをインラインで定義する場合はやイベントを作成したら関数そのものを渡さないとレンダーされた時に毎回ハンドラが実行されてしまう
