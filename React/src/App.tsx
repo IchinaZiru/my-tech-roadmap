@@ -3,7 +3,7 @@ import { useState } from 'react'
 // ── レッスンを実装したら下のimportコメントを外す ──────────────────────
 import JsxLesson          from './lessons/01-jsx/JsxLesson'
 import ComponentsLesson   from './lessons/02-components/ComponentsLesson'
-// import PropsLesson        from './lessons/03-props/PropsLesson'
+import PropsLesson        from './lessons/03-props/PropsLesson'
 // import UseStateLesson     from './lessons/04-useState/UseStateLesson'
 // import EventsLesson       from './lessons/05-events/EventsLesson'
 // import ConditionalLesson  from './lessons/06-conditional/ConditionalLesson'
@@ -22,7 +22,7 @@ type Lesson = {
 const LESSONS: Lesson[] = [
   { label: '01 JSX',           Component: JsxLesson },
   { label: '02 Components',    Component: ComponentsLesson },
-  { label: '03 Props',         Component: null },
+  { label: '03 Props',         Component: PropsLesson },
   { label: '04 useState',      Component: null },
   { label: '05 Events',        Component: null },
   { label: '06 Conditional',   Component: null },

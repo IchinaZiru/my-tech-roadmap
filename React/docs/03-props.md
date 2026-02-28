@@ -42,19 +42,42 @@ import PropsLesson from './lessons/03-props/PropsLesson'
 
 ### 概念
 <!-- Props とは何か、1〜3行で -->
+親から子に引数を渡す
 
 ### 最小実装
 ```jsx
-// 最もシンプルなProps使用例を書く
+//子
+type CardProps = {
+    name: string
+    role: string
+    activate?: boolean
+}
+
+export default function UseCard({name, role, activate}: CardProps) {
+    return (
+        <div>
+            <h3>名前 = {name}</h3>
+            <p>役割 = {role}</p>
+            <p>activate = {activate ? 'true' : 'false'}</p>
+        </div>
+    )
+}
+//親
+<UseCard name="田中" role="管理者" activate={true}></UseCard>
 ```
 
 ### 実務での型
 ```jsx
-// よく使うパターンを書く
+変数名はisActive?のように書くのが慣習
 ```
 
 ### 落とし穴
 <!-- よくあるエラーと回避策 -->
+関数の外側で変数を定義し、関数に引数として変数を書いたらxxx{xx, xx} : XXXXという風に書く
+TypeScriptの型定義のところで?を付けるとオプショナル(省略可能)な引数になる->親コンポーネントで渡さなくてもいいpropsになる
 
 ### 説明できる状態
 <!-- 口頭で人に説明できるようになったら1〜2文でまとめる -->
+Propsは親コンポーネントから子コンポーネントに引数を渡す方法
+親コンポーネントは子コンポーネントの関数をimportしコンポーネント内に引数を渡した形で定義(TypeScriptの型定義)
+子コンポーネントは関数外で定義した引数を関数内で呼び使用(:xxxも忘れずに)
