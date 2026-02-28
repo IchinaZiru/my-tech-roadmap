@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function_practice2</title>
+  </head>
+  <body>
+    <h1>function_practice2</h1>
+
+    <form id="form">
+      <div>
+        <label for="name">名前</label>
+        <input id="name" name="name" type="text" autocomplete="name" />
+      </div>
+
+      <div>
+        <label for="a">数値A</label>
+        <input id="a" name="a" type="number" inputmode="decimal" />
+      </div>
+
+      <div>
+        <label for="b">数値B</label>
+        <input id="b" name="b" type="number" inputmode="decimal" />
+      </div>
+
+      <button type="submit">実行</button>
+    </form>
+
+    <h2>結果</h2>
+    <pre id="output" aria-live="polite"></pre>
+
+    <script src="./function_practice2.js"></script>
+  </body>
+</html>
