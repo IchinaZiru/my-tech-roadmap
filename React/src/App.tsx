@@ -8,7 +8,7 @@ import UseStateLesson     from './lessons/04-useState/UseStateLesson'
 import EventsLesson       from './lessons/05-events/EventsLesson'
 import ConditionalLesson  from './lessons/06-conditional/ConditionalLesson'
 import ListsLesson        from './lessons/07-lists/ListsLesson'
-// import UseEffectLesson    from './lessons/08-useEffect/UseEffectLesson'
+import UseEffectLesson    from './lessons/08-useEffect/UseEffectLesson'
 // import FormsLesson        from './lessons/09-forms/FormsLesson'
 // import CustomHooksLesson  from './lessons/10-custom-hooks/CustomHooksLesson'
 // import UseContextLesson   from './lessons/11-useContext/UseContextLesson'
@@ -27,7 +27,7 @@ const LESSONS: Lesson[] = [
   { label: '05 Events',        Component: EventsLesson },
   { label: '06 Conditional',   Component: ConditionalLesson },
   { label: '07 Lists',         Component: ListsLesson },
-  { label: '08 useEffect',     Component: null },
+  { label: '08 useEffect',     Component: UseEffectLesson },
   { label: '09 Forms',         Component: null },
   { label: '10 Custom Hooks',  Component: null },
   { label: '11 useContext',    Component: null },
