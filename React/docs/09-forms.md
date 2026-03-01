@@ -91,15 +91,37 @@ import FormsLesson from './lessons/09-forms/FormsLesson'
 ## 学習ノート（実装後に自分で埋める）
 
 ### 概念
-
+`{xxx.xxx}`で変数の特定の変数に触れる
 ### 最小実装
-```jsx
+```tsx
+
 ```
 
 ### 実務での型
-```jsx
+```tsx
+const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault()
+
+  // 全エラーを一度計算する
+  const newErrors = { name: '', email: '', agree: '' }
+  if (!form.name) newErrors.name = '名前は必須です'
+  if (!form.email.includes('@')) newErrors.email = '有効なメールを入力してください'
+  if (!form.agree) newErrors.agree = '同意が必要です'
+
+  setErrors(newErrors)  // エラーをstateに保存
+
+  // エラーが1つでもあれば送信しない
+  if (newErrors.name || newErrors.email || newErrors.agree) return
+
+  setSubmitted(true)
+}
 ```
 
 ### 落とし穴
+汎用ハンドラはe.target.nameでどのフィールドか判断している為、input属性に`name`を入れ忘れないようにする
+`<form>`はデフォルトでページをリロードしてしまうので`e.preventDefault()` を書いて、デフォルト動作をキャンセルする
 
 ### 説明できる状態
+各項目のフォームとエラーと提出できたかをstateで管理
+提出ハンドラを作ってエラー状態などを設定
+提出できた場合にのみ提出できたメッセージを送信
