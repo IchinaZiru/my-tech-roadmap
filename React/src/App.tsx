@@ -10,7 +10,7 @@ import ConditionalLesson  from './lessons/06-conditional/ConditionalLesson'
 import ListsLesson        from './lessons/07-lists/ListsLesson'
 import UseEffectLesson    from './lessons/08-useEffect/UseEffectLesson'
 import FormsLesson        from './lessons/09-forms/FormsLesson'
-// import CustomHooksLesson  from './lessons/10-custom-hooks/CustomHooksLesson'
+import CustomHooksLesson  from './lessons/10-custom-hooks/CustomHooksLesson'
 // import UseContextLesson   from './lessons/11-useContext/UseContextLesson'
 // ────────────────────────────────────────────────────────────────────────
 
@@ -29,7 +29,7 @@ const LESSONS: Lesson[] = [
   { label: '07 Lists',         Component: ListsLesson },
   { label: '08 useEffect',     Component: UseEffectLesson },
   { label: '09 Forms',         Component: FormsLesson },
-  { label: '10 Custom Hooks',  Component: null },
+  { label: '10 Custom Hooks',  Component: CustomHooksLesson },
   { label: '11 useContext',    Component: null },
 ]
 
