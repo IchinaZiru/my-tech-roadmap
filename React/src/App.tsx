@@ -11,7 +11,7 @@ import ListsLesson        from './lessons/07-lists/ListsLesson'
 import UseEffectLesson    from './lessons/08-useEffect/UseEffectLesson'
 import FormsLesson        from './lessons/09-forms/FormsLesson'
 import CustomHooksLesson  from './lessons/10-custom-hooks/CustomHooksLesson'
-// import UseContextLesson   from './lessons/11-useContext/UseContextLesson'
+import UseContextLesson   from './lessons/11-useContext/UseContextLesson'
 // ────────────────────────────────────────────────────────────────────────
 
 type Lesson = {
@@ -30,7 +30,7 @@ const LESSONS: Lesson[] = [
   { label: '08 useEffect',     Component: UseEffectLesson },
   { label: '09 Forms',         Component: FormsLesson },
   { label: '10 Custom Hooks',  Component: CustomHooksLesson },
-  { label: '11 useContext',    Component: null },
+  { label: '11 useContext',    Component: UseContextLesson },
 ]
 
 export default function App() {
