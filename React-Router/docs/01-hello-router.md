@@ -87,19 +87,50 @@ import { MemoryRouter, Routes, Route } from 'react-router-dom'
 
 ### 概念
 <!-- BrowserRouter / MemoryRouter / Routes / Route の役割を1〜3行で書く -->
-
+- **Router**（`MemoryRouter`）— ルーティング機能全体を包む器
+- **Routes** — Route の一覧を管理する。一致したものだけを描画する
+- **Route** — `path` とコンポーネントを対応させる1行
 ### 最小実装
 ```tsx
-// 最もシンプルなルーティングのコードを書く
+      <MemoryRouter initialEntries={['/about']}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </MemoryRouter>
 ```
 
 ### 実務での型
 ```tsx
-// 実際のアプリで BrowserRouter を使う形を書く
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// Components
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
+import MainContent from './components/MainContent';
+
+function App() {
+  return (
+    <Router>
+      <div>
+        <Header />
+        <Sidebar />
+        <Routes>
+          <Route path="/" element={<MainContent />} />
+          <Route path="/component1" element={<MainContent selectedComponent="component1" />} />
+          <Route path="/component2" element={<MainContent selectedComponent="component2" />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
+
 ```
 
 ### 落とし穴
 <!-- よくあるエラーと回避策 -->
-
+３つの要素を入れ子にしないと動作しない
 ### 説明できる状態
 <!-- 口頭で人に説明できるようになったら1〜2文でまとめる -->
+`<Router>`を定義して遷移したいパスを指定する前に`<Routes>`を書いて、遷移パスの一覧を管理して`<Route>`でパスを設定

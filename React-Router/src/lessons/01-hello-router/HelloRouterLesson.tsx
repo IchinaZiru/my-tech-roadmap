@@ -23,6 +23,12 @@ export default function HelloRouterLesson() {
     <div>
       <h2>Lesson 01: Hello Router</h2>
       {/* MemoryRouter > Routes > Route の3層構造を作る */}
+      <MemoryRouter initialEntries={['/about']}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </MemoryRouter>
     </div>
   )
 }
