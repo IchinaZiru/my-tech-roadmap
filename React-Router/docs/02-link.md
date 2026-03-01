@@ -75,19 +75,32 @@ import { MemoryRouter, Routes, Route, Link } from 'react-router-dom'
 
 ### 概念
 <!-- Link と <a> の違いを1〜3行で書く -->
-
+aタグはページをリロードしてしまうからstate状態もリセットされてしまう
+Linkはリロードなしで遷移可能
 ### 最小実装
 ```tsx
-// 最もシンプルな Link の使い方を書く
+<Router>
+  <Link to = "/"> Home </Link>
+  <Routes>
+    <Route path ="/" element={<Home />} />
+  </Routes>
+<Router />
 ```
 
 ### 実務での型
 ```tsx
-// よく使うパターンを書く
+<nav>
+  <Link to="/">Home</Link>
+  <Link to="/about">About</Link>
+  <Link to="/contact">Contact</Link>
+</nav>
+
 ```
 
 ### 落とし穴
 <!-- よくあるエラーと回避策 -->
-
+linkで遷移ボタンを作ってもRouteを定義しないと遷移できない
 ### 説明できる状態
 <!-- 口頭で人に説明できるようになったら1〜2文でまとめる -->
+link -> 遷移ボタン
+route -> 遷移処理
