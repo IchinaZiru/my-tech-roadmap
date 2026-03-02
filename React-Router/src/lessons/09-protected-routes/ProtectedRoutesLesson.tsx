@@ -17,24 +17,39 @@ import { MemoryRouter, Routes, Route, Navigate, Outlet, Link, useNavigate } from
 function RequireAuth({ isLoggedIn }: { isLoggedIn: boolean }) {
   // isLoggedIn が false なら <Navigate to="/login" replace /> を返す
   // true なら <Outlet /> を返す
-  return <></>
+  if (!isLoggedIn) {
+    return <Navigate to="/login" replace />
+  }
+  return <Outlet />
 }
 
 function LoginPage({ onLogin }: { onLogin: () => void }) {
+  const navigate = useNavigate()
   return (
     <div>
       <h3>ログインしてください</h3>
       {/* ログインボタン: クリックで onLogin を呼ぶ、その後 /dashboard に navigate する */}
+      <button onClick={() => {
+        onLogin()
+        navigate('/dashboard')
+      }}>ログイン</button>
     </div>
   )
 }
 
 function Dashboard({ onLogout }: { onLogout: () => void }) {
+  const navigate = useNavigate()
   return (
     <div>
       <h3>ダッシュボード</h3>
       <p>ようこそ！</p>
       {/* ログアウトボタン: クリックで onLogout を呼ぶ */}
+      <button onClick={() => {
+        onLogout()
+        navigate('/login')
+      }}>
+        ログアウト
+      </button>
     </div>
   )
 }
@@ -54,6 +69,9 @@ export default function ProtectedRoutesLesson() {
             element={<LoginPage onLogin={() => setIsLoggedIn(true)} />}
           />
           {/* RequireAuth で /dashboard を保護する */}
+          <Route element={<RequireAuth isLoggedIn={isLoggedIn} />}>
+            <Route path='/dashboard' element={<Dashboard onLogout={() => setIsLoggedIn(false)} />} />
+          </Route>
         </Routes>
       </MemoryRouter>
     </div>

@@ -85,15 +85,32 @@ function RequireAuth({ isLoggedIn }: { isLoggedIn: boolean }) {
 
 ### 概念
 <!-- Protected Routes の仕組みを1〜3行で書く -->
-
+true/falseのRouteで入れ子を作り、壁を作れる
 ### 最小実装
 ```tsx
-// 最もシンプルな RequireAuth の書き方を書く
+          {/* RequireAuth で /dashboard を保護する */}
+          <Route element={<RequireAuth isLoggedIn={isLoggedIn} />}>
+            <Route path='/dashboard' element={<Dashboard onLogout={() => setIsLoggedIn(false)} />} />
+          </Route>
+        </Routes>
 ```
 
 ### 実務での型
 ```tsx
-// よく使うパターンを書く
+          {/* RequireAuth で /dashboard を保護する */}
+          <Route element={<RequireAuth isLoggedIn={isLoggedIn} />}>
+            <Route path='/dashboard' element={<Dashboard onLogout={() => setIsLoggedIn(false)} />} />
+          </Route>
+        </Routes>
+
+function RequireAuth({ isLoggedIn }: { isLoggedIn: boolean }) {
+  // isLoggedIn が false なら <Navigate to="/login" replace /> を返す
+  // true なら <Outlet /> を返す
+  if (!isLoggedIn) {
+    return <Navigate to="/login" replace />
+  }
+  return <Outlet />
+}
 ```
 
 ### 落とし穴
