@@ -61,15 +61,25 @@ import NotFoundLesson from './lessons/06-not-found/NotFoundLesson'
 
 ### 概念
 <!-- path="*" の役割を1〜3行で書く -->
-
+どのパスにもマッチしていない場合の遷移処理を任せられる
 ### 最小実装
 ```tsx
-// 404 ページの最もシンプルな実装を書く
+<Route path="*" element={<NotFound />} />
 ```
 
 ### 実務での型
 ```tsx
-// よく使うパターンを書く
+<Route path="*" element={<NotFound />} />
+
+function NotFound() {
+  return (
+    <div>
+      {/* 404 メッセージと Home への Link を作る */}
+      <p>404 - ページが見つかりません</p>
+      <Link to ="/">Home に戻る</Link>
+    </div>
+  )
+}
 ```
 
 ### 落とし穴
@@ -77,3 +87,4 @@ import NotFoundLesson from './lessons/06-not-found/NotFoundLesson'
 
 ### 説明できる状態
 <!-- 口頭で人に説明できるようになったら1〜2文でまとめる -->
+ページが存在しないリンクを踏まれた時の遷移処理を作るには`path="*"`を使用する

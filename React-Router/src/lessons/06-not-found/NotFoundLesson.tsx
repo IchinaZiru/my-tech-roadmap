@@ -21,6 +21,8 @@ function NotFound() {
   return (
     <div>
       {/* 404 メッセージと Home への Link を作る */}
+      <p>404 - ページが見つかりません</p>
+      <Link to ="/">Home に戻る</Link>
     </div>
   )
 }
@@ -30,7 +32,7 @@ export default function NotFoundLesson() {
     <div>
       <h2>Lesson 06: Not Found</h2>
       {/* initialEntries を ['/unknown'] に変えて 404 を確認する */}
-      <MemoryRouter initialEntries={['/']}>
+      <MemoryRouter initialEntries={['/unknown']}>
         <nav>
           <Link to="/">Home</Link>
           {' | '}
@@ -38,6 +40,9 @@ export default function NotFoundLesson() {
         </nav>
         <Routes>
           {/* ルートを定義する。path="*" を最後に置く */}
+          <Route path="/" element={<Home />} />
+          <Route path ="/about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </MemoryRouter>
     </div>
