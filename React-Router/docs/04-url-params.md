@@ -82,19 +82,30 @@ function UserDetail() {
 
 ### 概念
 <!-- URL パラメータと useParams の役割を1〜3行で書く -->
-
+`/:...`で変数をパスに設定できる
+その変数を動的に取得するにはuseParamsが必要
 ### 最小実装
 ```tsx
-// 最もシンプルな useParams の使い方を書く
+<Route path="/users/:userId" element={<UserDetail />} />
+
+const { userId } = useParams()
 ```
 
 ### 実務での型
 ```tsx
-// よく使うパターンを書く
+<Route path="/users/:userId" element={<UserDetail />} />
+  // useParams で userId を取得する
+  // USERS から該当ユーザーを探して表示する
+  const { userId } = useParams()
+  //ユーザーを探す
+  const user = USERS.find(u => u.id === userId)
 ```
 
 ### 落とし穴
 <!-- よくあるエラーと回避策 -->
-
+パスの中の変数名とParamsのキー名が同じでないと動作しない
 ### 説明できる状態
 <!-- 口頭で人に説明できるようになったら1〜2文でまとめる -->
+URLの一部を変数として扱って動的な遷移が可能
+変数ごとのパスを指定するには`/:...`が必要
+そしてその値を取得するにはuseParamsが必要

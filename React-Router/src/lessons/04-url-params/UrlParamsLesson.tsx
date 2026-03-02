@@ -20,6 +20,11 @@ function UserList() {
     <div>
       <h3>ユーザー一覧</h3>
       {/* USERS をループして各ユーザーへの Link を作る */}
+      {USERS.map(user => (
+        <div key={user.id}>
+          <Link to={`/users/${user.id}`}>{user.name}</Link>
+        </div>
+      ))}
     </div>
   )
 }
@@ -27,12 +32,23 @@ function UserList() {
 function UserDetail() {
   // useParams で userId を取得する
   // USERS から該当ユーザーを探して表示する
+  const { userId } = useParams()
+  //ユーザーを探す
+  const user = USERS.find(u => u.id === userId)
+
+  //ユーザーが見つからない場合の処理
+  if(!user){
+    return <p>ユーザーが見つかりませんでした。</p>
+  }
 
   return (
     <div>
       <h3>ユーザー詳細</h3>
       {/* ID と名前を表示する */}
+      <p> ID : {user.id}</p>
+      <p> 名前 : {user.name}</p>
       {/* 一覧に戻る Link を置く */}
+      <Link to ="/">← 一覧に戻る</Link>
     </div>
   )
 }
@@ -44,6 +60,8 @@ export default function UrlParamsLesson() {
       <MemoryRouter>
         <Routes>
           {/* ルートを定義する */}
+          <Route path="/" element={<UserList />} />
+          <Route path="/users/:userId" element={<UserDetail />} />
         </Routes>
       </MemoryRouter>
     </div>
