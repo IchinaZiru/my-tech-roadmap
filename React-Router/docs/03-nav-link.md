@@ -85,10 +85,18 @@ import { NavLink } from 'react-router-dom'
 
 ### 概念
 <!-- NavLink と Link の違いを1〜3行で書く -->
-
+Linkはボタンを作るだけ、NavLinkは要素付きのボタンを作れる
 ### 最小実装
 ```tsx
-// 最もシンプルな NavLink の使い方を書く
+        <NavLink
+          to="/"
+          style={({ isActive }) => ({
+            fontWeight: isActive ? 'bold' : 'normal',
+          })}
+          className={({ isActive }) => isActive ? 'active' : ''}
+        >
+          Home
+        </NavLink>
 ```
 
 ### 実務での型
@@ -98,6 +106,7 @@ import { NavLink } from 'react-router-dom'
 
 ### 落とし穴
 <!-- よくあるエラーと回避策 -->
-
+`{() => ({....})}`注意
 ### 説明できる状態
 <!-- 口頭で人に説明できるようになったら1〜2文でまとめる -->
+NavLink は現在のページ（アクティブ）を自動判定してスタイルを変更できる

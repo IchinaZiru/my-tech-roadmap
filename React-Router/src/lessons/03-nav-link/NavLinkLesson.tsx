@@ -27,9 +27,38 @@ export default function NavLinkLesson() {
       <MemoryRouter>
         {/* NavLink を使ってナビゲーションを作る */}
         {/* isActive を使ってアクティブなリンクにスタイルを当てる */}
-
+        <NavLink
+          to="/"
+          style={({ isActive }) => ({
+            fontWeight: isActive ? 'bold' : 'normal',
+          })}
+          className={({ isActive }) => isActive ? 'active' : ''}
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to="/about"
+          style={({ isActive }) => ({
+            fontWeight: isActive ? 'bold' : 'normal',
+          })}
+          className={({ isActive }) => isActive ? 'active' : ''}
+        >
+          About
+        </NavLink>
+        <NavLink
+          to="/contact"
+          style={({ isActive }) => ({
+            fontWeight: isActive ? 'bold' : 'normal',
+          })}
+          className={({ isActive }) => isActive ? 'active' : ''}
+        >
+          Contact
+        </NavLink>
         <Routes>
           {/* ここにルートを定義する */}
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </MemoryRouter>
     </div>
