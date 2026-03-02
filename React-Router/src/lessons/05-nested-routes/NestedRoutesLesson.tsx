@@ -17,8 +17,11 @@ function Settings() {
       {/* サブメニューの Link を作る */}
       <nav>
         {/* /settings/profile と /settings/notices へのリンク */}
+        <Link to= "/settings/profile">プロフィール</Link>
+        <Link to= "/settings/notices">通知</Link>
       </nav>
       {/* 子ルートがここに描画される */}
+      <Outlet />
     </div>
   )
 }
@@ -38,6 +41,10 @@ export default function NestedRoutesLesson() {
       <MemoryRouter initialEntries={['/settings/profile']}>
         <Routes>
           {/* Settings を親ルートにして Profile と Notices を子ルートにする */}
+          <Route path='/settings' element={<Settings />}   >
+            <Route path='/settings/profile' element={<Profile />} />
+            <Route path='/settings/notices' element={<Notices />} />
+          </Route>
         </Routes>
       </MemoryRouter>
     </div>

@@ -97,16 +97,24 @@ function Settings() {
 
 ### 最小実装
 ```tsx
-// 最もシンプルなネストルートの書き方を書く
+// Route の入れ子
+<Route path="/settings" element={<Settings />}>
+  <Route path="profile" element={<Profile />} />
+  <Route path="notices" element={<Notices />} />
+</Route>
 ```
 
 ### 実務での型
 ```tsx
-// よく使うパターンを書く
+<Route path='profile' element={<Profile />} />
+<Route path='notices' element={<Notices />} />
 ```
 
 ### 落とし穴
 <!-- よくあるエラーと回避策 -->
+入れ子でのパスは相対パスにする
 
 ### 説明できる状態
 <!-- 口頭で人に説明できるようになったら1〜2文でまとめる -->
+入れ子にして相対パスに設定できれば書き換えする必要がなくなる
+子コンポーネントの描画場所を`</Outlet>`を使用することで指定できる
