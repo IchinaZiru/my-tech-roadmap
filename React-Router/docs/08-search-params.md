@@ -85,19 +85,30 @@ function Search() {
 
 ### 概念
 <!-- useSearchParams の役割を1〜3行で書く -->
-
+?q以降のクエリパラメータを取得
 ### 最小実装
 ```tsx
-// 最もシンプルな useSearchParams の使い方を書く
+  const [searchParams, setSearchParams] = useSearchParams()
+  const query = searchParams.get('q') || ''
 ```
 
 ### 実務での型
 ```tsx
-// よく使うパターンを書く
+  const [searchParams, setSearchParams] = useSearchParams()
+  const query = searchParams.get('q') || ''
+
+  //フィルタリング処理
+  const filtered = FRAMEWORKS.filter(name => name.toLowerCase().includes(query.toLowerCase()))
+
+  const handleChange = (value : string) => {
+    setSearchParams({ q: value })
+  }
 ```
 
 ### 落とし穴
 <!-- よくあるエラーと回避策 -->
-
+`|| ''`は''の時にフォールバック
+`?? ''`は''の時にそのまま空文字として使用
 ### 説明できる状態
 <!-- 口頭で人に説明できるようになったら1〜2文でまとめる -->
+useSearchParams()を利用することによってクエリの取得、更新が可能になる

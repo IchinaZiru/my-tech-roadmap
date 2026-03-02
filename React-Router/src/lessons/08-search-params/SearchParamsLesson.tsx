@@ -15,15 +15,28 @@ function SearchPage() {
   // useSearchParams で [searchParams, setSearchParams] を取得する
   // searchParams.get('q') で現在の検索ワードを読む
   // FRAMEWORKS を filter してキーワードに一致するものだけ表示する
+  const [searchParams, setSearchParams] = useSearchParams()
+  const query = searchParams.get('q') || ''
+
+  //フィルタリング処理
+  const filtered = FRAMEWORKS.filter(name => name.toLowerCase().includes(query.toLowerCase()))
+
+  const handleChange = (value : string) => {
+    setSearchParams({ q: value })
+  }
 
   return (
     <div>
       <label>
         検索:{' '}
         {/* input の value と onChange を設定する */}
+        <input type="text" value={query} onChange={(e) => handleChange(e.target.value)}/>
       </label>
       <ul>
         {/* フィルタリングした結果をリスト表示する */}
+        {filtered.map(name => (
+          <li key={name}>{name}</li>
+        ))}
       </ul>
     </div>
   )
@@ -34,7 +47,7 @@ export default function SearchParamsLesson() {
     <div>
       <h2>Lesson 08: Search Params</h2>
       {/* initialEntries={['/?q=re']} に変えると「React」だけ表示される */}
-      <MemoryRouter initialEntries={['/']}>
+      <MemoryRouter initialEntries={['/?q=Re']}>
         <Routes>
           <Route path="/" element={<SearchPage />} />
         </Routes>
