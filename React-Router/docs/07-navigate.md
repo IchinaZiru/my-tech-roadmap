@@ -87,19 +87,33 @@ navigate(-1)
 
 ### 概念
 <!-- useNavigate の役割と Link との使い分けを1〜3行で書く -->
-
+`useNavigate`命令的に遷移させる、さらに遷移先に状態を渡せる
+`useLocation`受け取った状態を拾える
 ### 最小実装
 ```tsx
-// 最もシンプルな useNavigate の使い方を書く
+  const handleSubmit = (name: string) => {
+    navigate('/result', { state: { name } })
+  }
+
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  const name = location.state?.name || '名無し'
 ```
 
 ### 実務での型
 ```tsx
-// よく使うパターンを書く
+// state を渡して遷移
+navigate('/result', { state: { name } })
+
+// 履歴を戻る
+navigate(-1)
 ```
 
 ### 落とし穴
 <!-- よくあるエラーと回避策 -->
-
+Navigate先をrouteで定義しないと遷移できない
 ### 説明できる状態
 <!-- 口頭で人に説明できるようになったら1〜2文でまとめる -->
+Navigateは処理後に遷移をさせることができる
+Locationと組み合わせて状態を渡すことも可能
