@@ -16,9 +16,13 @@ function Layout() {
       <header style={{ background: '#1e293b', color: 'white', padding: '12px 24px', display: 'flex', gap: '16px', alignItems: 'center' }}>
         <strong>My App</strong>
         {/* NavLink でナビゲーションを作る */}
+        <NavLink to="/">Home</NavLink> 
+        <NavLink to="/about">About</NavLink>
+        <NavLink to="/contact">Contact</NavLink>
       </header>
       <main style={{ padding: '24px' }}>
         {/* 子ルートのコンポーネントがここに描画される */}
+        <Outlet />
       </main>
       <footer style={{ borderTop: '1px solid #e2e8f0', padding: '12px 24px', color: '#64748b', fontSize: '14px' }}>
         © 2025 My App
@@ -46,6 +50,11 @@ export default function LayoutRoutesLesson() {
       <MemoryRouter>
         <Routes>
           {/* path を持たない Route で Layout を定義し、その中に子ルートを置く */}
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Route>
         </Routes>
       </MemoryRouter>
     </div>
