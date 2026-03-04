@@ -75,19 +75,34 @@ import * as ObjectsTypesLesson from './lessons/05-objects-types/ObjectsTypesLess
 
 ### 概念
 <!-- type エイリアスとは何か、1〜3行で書く -->
-
+オブジェクトの「形」を型として定義する
 ### 最小実装
 ```ts
-// User 型の最小定義と利用例を書く
+  type User = {
+    name : string
+    age : number
+    nickname? : string
+  }
 ```
 
 ### 実務での型
 ```ts
-// 実務でよく見るオブジェクト型のパターンを書く
+  type User = {
+    name : string
+    age : number
+    nickname? : string
+  }
+
+  const user1 : User ={
+    name : "田中",
+    age : 25,
+    nickname : "taro"
+  }
 ```
 
 ### 落とし穴
 <!-- プロパティ名のタイポ・オプショナルの扱い忘れなど -->
-
+`??` は "null/undefined なら右の値を使う" という演算子
+`<h2>ユーザー2: ${user2.name},${user2.age},${user2.nickname ?? '(なし)'}</h2>`
 ### 説明できる状態
 <!-- 口頭で人に説明できるようになったら1〜2文でまとめる -->
