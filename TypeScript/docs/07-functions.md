@@ -81,15 +81,17 @@ import * as FunctionsLesson from './lessons/07-functions/FunctionsLesson'
 
 ### 概念
 <!-- 関数の型付けとは何か、1〜3行で書く -->
-
+関数の入力する引数や関数の出力する型を指定することができる
 ### 最小実装
 ```ts
-// 最もシンプルな型付き関数を書く
+function add(a: number, b: number): number
 ```
 
 ### 実務での型
 ```ts
-// コールバック関数の型など、実務でよく見るパターンを書く
+  function add(a: number, b: number): number {
+    return a + b
+  }
 ```
 
 ### 落とし穴
