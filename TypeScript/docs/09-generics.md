@@ -87,10 +87,10 @@ import * as GenericsLesson from './lessons/09-generics/GenericsLesson'
 
 ### 概念
 <!-- ジェネリクスとは何か、any との違いを1〜3行で書く -->
-
+ジェネリクスとは「型を引数として受け取る仕組み」
 ### 最小実装
 ```ts
-// identity<T> の最小実装を書く
+function identity<T>(value: T): T
 ```
 
 ### 実務での型
@@ -103,3 +103,4 @@ import * as GenericsLesson from './lessons/09-generics/GenericsLesson'
 
 ### 説明できる状態
 <!-- 口頭で人に説明できるようになったら1〜2文でまとめる -->
+ジェネリクスは型情報を保ったまま汎用的に書けるのが any との違い
