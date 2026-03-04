@@ -9,5 +9,9 @@
 
 export function run(): string {
   // ここに実装する
-  return ''
+  const name : string = "Hello"
+  const age : number = 20
+  return `<h2>Lesson 01: Hello World</h2><p>名前: ${name}, 年齢: ${age}</p>`
 }
+
+

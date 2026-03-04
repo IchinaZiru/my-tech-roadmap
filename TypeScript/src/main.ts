@@ -1,15 +1,15 @@
 // ── レッスンを実装したら下のimportコメントを外す ──────────────────────
-// import * as HelloWorldLesson    from './lessons/01-hello-world/HelloWorldLesson'
-// import * as BasicTypesLesson    from './lessons/02-basic-types/BasicTypesLesson'
-// import * as TypeInferenceLesson from './lessons/03-type-inference/TypeInferenceLesson'
-// import * as ArraysTuplesLesson  from './lessons/04-arrays-tuples/ArraysTuplesLesson'
-// import * as ObjectsTypesLesson  from './lessons/05-objects-types/ObjectsTypesLesson'
-// import * as InterfacesLesson    from './lessons/06-interfaces/InterfacesLesson'
-// import * as FunctionsLesson     from './lessons/07-functions/FunctionsLesson'
-// import * as UnionLiteralLesson  from './lessons/08-union-literal/UnionLiteralLesson'
-// import * as GenericsLesson      from './lessons/09-generics/GenericsLesson'
-// import * as TypeNarrowingLesson from './lessons/10-type-narrowing/TypeNarrowingLesson'
-// import * as UtilityTypesLesson  from './lessons/11-utility-types/UtilityTypesLesson'
+import * as HelloWorldLesson    from './lessons/01-hello-world/HelloWorldLesson'
+import * as BasicTypesLesson    from './lessons/02-basic-types/BasicTypesLesson'
+import * as TypeInferenceLesson from './lessons/03-type-inference/TypeInferenceLesson'
+import * as ArraysTuplesLesson  from './lessons/04-arrays-tuples/ArraysTuplesLesson'
+import * as ObjectsTypesLesson  from './lessons/05-objects-types/ObjectsTypesLesson'
+import * as InterfacesLesson    from './lessons/06-interfaces/InterfacesLesson'
+import * as FunctionsLesson     from './lessons/07-functions/FunctionsLesson'
+import * as UnionLiteralLesson  from './lessons/08-union-literal/UnionLiteralLesson'
+import * as GenericsLesson      from './lessons/09-generics/GenericsLesson'
+import * as TypeNarrowingLesson from './lessons/10-type-narrowing/TypeNarrowingLesson'
+import * as UtilityTypesLesson  from './lessons/11-utility-types/UtilityTypesLesson'
 // ────────────────────────────────────────────────────────────────────────
 
 type Lesson = {
@@ -18,17 +18,17 @@ type Lesson = {
 }
 
 const LESSONS: Lesson[] = [
-  { label: '01 Hello World',    run: null },
-  { label: '02 Basic Types',    run: null },
-  { label: '03 Type Inference', run: null },
-  { label: '04 Arrays Tuples',  run: null },
-  { label: '05 Objects Types',  run: null },
-  { label: '06 Interfaces',     run: null },
-  { label: '07 Functions',      run: null },
-  { label: '08 Union Literal',  run: null },
-  { label: '09 Generics',       run: null },
-  { label: '10 Type Narrowing', run: null },
-  { label: '11 Utility Types',  run: null },
+  { label: '01 Hello World',    run: HelloWorldLesson.run },
+  { label: '02 Basic Types',    run: BasicTypesLesson.run },
+  { label: '03 Type Inference', run: TypeInferenceLesson.run },
+  { label: '04 Arrays Tuples',  run: ArraysTuplesLesson.run },
+  { label: '05 Objects Types',  run: ObjectsTypesLesson.run },
+  { label: '06 Interfaces',     run: InterfacesLesson.run },
+  { label: '07 Functions',      run: FunctionsLesson.run },
+  { label: '08 Union Literal',  run: UnionLiteralLesson.run },
+  { label: '09 Generics',       run: GenericsLesson.run },
+  { label: '10 Type Narrowing', run: TypeNarrowingLesson.run },
+  { label: '11 Utility Types',  run: UtilityTypesLesson.run },
 ]
 
 // ── DOM 構築 ──────────────────────────────────────────────────────────
