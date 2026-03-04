@@ -85,19 +85,36 @@ import * as UnionLiteralLesson from './lessons/08-union-literal/UnionLiteralLess
 
 ### 概念
 <!-- ユニオン型・リテラル型とは何か、1〜3行で書く -->
+ユニオン型 A | B は「AかBのどちらか」。
+リテラル型は値そのものを型にしたもの（'admin' | 'user'）。
 
 ### 最小実装
 ```ts
-// Role 型と getPermission 関数の最小実装を書く
+type Role = 'admin' | 'user' | 'guest'
+  
+function getPermissions(role: Role): string {
+    switch(role){
+      case 'admin': return "フルアクセス"
+      case 'user': return "閲覧・編集"
+      case 'guest': return "閲覧のみ"
+    }
+  }
 ```
 
 ### 実務での型
 ```ts
-// API レスポンスのステータスなど、実務でよく見るパターンを書く
+// API のステータスや画面の状態管理でよく使う
+type Status = 'loading' | 'success' | 'error'
+
 ```
 
 ### 落とし穴
 <!-- switch の網羅性チェック・ユニオン型での操作制限など -->
+switch で全ケースを書かないと戻り値が undefined になる
+（TypeScript が「全パターン網羅されていない」と警告してくれる）
 
 ### 説明できる状態
 <!-- 口頭で人に説明できるようになったら1〜2文でまとめる -->
+「ユニオン型は複数の型のどれかを表す。
+リテラル型は特定の値だけを許可する型で、
+組み合わせると取りうる値を限定できる」と言えれば OK。
