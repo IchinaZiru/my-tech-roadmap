@@ -95,10 +95,15 @@ import * as TypeNarrowingLesson from './lessons/10-type-narrowing/TypeNarrowingL
 
 ### 概念
 <!-- 型の絞り込みとは何か、1〜3行で書く -->
-
+この分岐の中では確実にこの型だ」と判断できるようになり、エラーを出さない
 ### 最小実装
 ```ts
-// typeof を使った最小の絞り込みコードを書く
+  function formatId(id: string | number):string{
+    if(typeof id === 'string'){
+      return `ID: ${id.toUpperCase()}`
+    }
+    return `ID: ${id.toString()}`
+  }
 ```
 
 ### 実務での型
@@ -111,3 +116,7 @@ import * as TypeNarrowingLesson from './lessons/10-type-narrowing/TypeNarrowingL
 
 ### 説明できる状態
 <!-- 口頭で人に説明できるようになったら1〜2文でまとめる -->
+`typeof` : string / number / boolean などプリミティブを区別するとき
+`instanceof` : Date / Error などクラスのインスタンスを区別するとき
+`in` : プロパティの有無でオブジェクトの種類を区別するとき
+`is(型ガード)` : 上記3つで対応できない複雑な条件を自分で定義するとき
