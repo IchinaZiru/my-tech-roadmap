@@ -78,11 +78,16 @@ import * as TypeInferenceLesson from './lessons/03-type-inference/TypeInferenceL
 
 ### 実務での型
 ```ts
-// 実務で型推論に頼る場面を書く
+constが実務ではよく使用される
 ```
 
 ### 落とし穴
 <!-- any になってしまうケースと対策 -->
-
+constは再代入不可
+`const x = "text" -> const x = "text_1"(エラーになる)`
+letは再代入可
+`const x = "text" -> const x = "text_1"(エラーにならない)`
+配列[]はanyになる
 ### 説明できる状態
 <!-- 口頭で人に説明できるようになったら1〜2文でまとめる -->
+再代入しないから const を使うのではなく、「できるだけ不変に保つ」のがモダンJavaScript/TypeScript の鉄則。再代入が必要なら新しい const を作って役割を明確にするのがプロの書き方。

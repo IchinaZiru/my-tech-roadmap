@@ -7,7 +7,21 @@
 //   [ ] 関数の戻り値型が自動推論されることを示す
 //   [ ] 型推論が失敗するケース（any になるケース）を1つ示す
 
+
+
 export function run(): string {
   // ここに実装する
-  return ''
+  const x = "Hello"
+  let y = "Hello"
+  const z =[]
+    
+  function double(n: number) {
+    return n * 2
+  }
+  return `
+  const x = "hello" 型 "Hello"
+  const y = "hello" 型 string
+  const z = [] 型 any
+  double = ${double(10)} : 型 number
+  `
 }
