@@ -72,19 +72,26 @@ import * as ArraysTuplesLesson from './lessons/04-arrays-tuples/ArraysTuplesLess
 
 ### 概念
 <!-- 配列型とタプル型の違いを1〜3行で書く -->
-
+タプル型は複数の型の値をいれられる
 ### 最小実装
 ```ts
-// string[] と [string, number] の最小宣言を書く
+const person : [string, number] = ["田中", 25]
 ```
 
 ### 実務での型
 ```ts
-// 実務でよく使う配列・タプルのパターンを書く
+  //配列
+  const fruits: string[] = [`リンゴ`, `バナナ`, `オレンジ`]
+  const scores :number[] = [80, 90, 70]
+
+  //タプル
+  const person : [string, number] = ["田中", 25]
 ```
 
 ### 落とし穴
 <!-- インデックス超過・型ミスマッチなどのエラーと対策 -->
+複数のタプル型の配列を表示する時、`${person[0], person[1]}`は避ける
+(a, b) という書き方は JavaScript のカンマ演算子で、「両方を評価して最後の値だけ返す」なので、`${person[0]}, ${person[1]}`こう書く
 
 ### 説明できる状態
 <!-- 口頭で人に説明できるようになったら1〜2文でまとめる -->
