@@ -7,10 +7,26 @@
 //   [ ] Animal 型と Dog 型の変数をそれぞれ作って表示する
 //   [ ] interface と type の違いをコメントで説明する
 
-// interface Animal { ... }
-// interface Dog extends Animal { ... }
+interface Animal { 
+  name: string
+  sound: string
+}
+
+interface Dog extends Animal { 
+  breed: string
+}
 
 export function run(): string {
   // ここに実装する
-  return ''
+  const animal: Animal = { name: 'ネコ', sound: 'にゃー' }
+  const dog: Dog ={ name: 'ポチ', sound: 'ワン', breed: '柴犬' }
+  return `
+  <h2>--- Animal ---</h2>
+  <p>名前: ${animal.name}</p>
+  <p>鳴き声: ${animal.sound}</p>
+  <h2>--- Dog ---</h2>
+  <p>名前: ${dog.name}</p>
+  <p>鳴き声: ${dog.sound}</p>
+  <p>犬種: ${dog.breed}</p>
+  `
 }

@@ -78,15 +78,23 @@ import * as InterfacesLesson from './lessons/06-interfaces/InterfacesLesson'
 
 ### 概念
 <!-- interface とは何か、type との違いを1〜3行で書く -->
-
+interfaceとは後から追加で変数を追加するときに継承させることができる変数の型定義
 ### 最小実装
 ```ts
-// Animal と Dog の最小定義を書く
+  const animal: Animal = { name: 'ネコ', sound: 'にゃー' }
+  const dog: Dog ={ name: 'ポチ', sound: 'ワン', breed: '柴犬' }
 ```
 
 ### 実務での型
 ```ts
-// 実務で interface を使う代表的なパターンを書く
+interface Animal { 
+  name: string
+  sound: string
+}
+
+interface Dog extends Animal { 
+  breed: string
+}
 ```
 
 ### 落とし穴
@@ -94,3 +102,5 @@ import * as InterfacesLesson from './lessons/06-interfaces/InterfacesLesson'
 
 ### 説明できる状態
 <!-- 口頭で人に説明できるようになったら1〜2文でまとめる -->
+interface: extends で拡張できる / 同名で再定義するとマージされる
+type: extends は使えないが & で交差型を作れる
