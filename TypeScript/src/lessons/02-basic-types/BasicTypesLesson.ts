@@ -8,7 +8,19 @@
 //   [ ] null と undefined の違いを変数で示す
 //   [ ] 各変数の型を画面上にラベルとして表示する
 
+
 export function run(): string {
   // ここに実装する
-  return ''
+const stack : string = "TypeScript"
+const count : number = 42
+const isReady : boolean = false
+const nothing : null = null
+const missing : undefined = undefined
+  return `
+  <h2> string: ${stack}</h2>
+  <h2>number : ${count}</h2>
+  <h2>Boolean : ${isReady}</h2>
+  <h2>Null : ${nothing}</h2>
+  <h2>Undefined : ${missing}</h2>
+  `
 }
