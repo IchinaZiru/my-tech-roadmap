@@ -12,7 +12,9 @@ export default function SpacingLesson() {
   return (
     <div className="p-8">
       <h2 className="text-2xl font-bold mb-6">Lesson 02: Spacing</h2>
-      {/* ここにコードを追加する */}
+      <div className="bg-blue-100 p-8">中身</div>
+
+      <div className="bg-blue-100 m-8">中身</div>
     </div>
   )
 }
