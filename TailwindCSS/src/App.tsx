@@ -1,18 +1,18 @@
 import { useState } from 'react'
 
 // ── レッスンを実装したら下のimportコメントを外す ──────────────────────
-// import HelloWorldLesson       from './lessons/01-hello-world/HelloWorldLesson'
-// import SpacingLesson          from './lessons/02-spacing/SpacingLesson'
-// import TypographyLesson       from './lessons/03-typography/TypographyLesson'
-// import ColorsLesson           from './lessons/04-colors/ColorsLesson'
-// import FlexboxLesson          from './lessons/05-flexbox/FlexboxLesson'
-// import GridLesson             from './lessons/06-grid/GridLesson'
-// import SizingLesson           from './lessons/07-sizing/SizingLesson'
-// import BordersLesson          from './lessons/08-borders/BordersLesson'
-// import ResponsiveLesson       from './lessons/09-responsive/ResponsiveLesson'
-// import StatesLesson           from './lessons/10-states/StatesLesson'
-// import DarkModeLesson         from './lessons/11-dark-mode/DarkModeLesson'
-// import ComponentPatternsLesson from './lessons/12-component-patterns/ComponentPatternsLesson'
+import HelloWorldLesson       from './lessons/01-hello-world/HelloWorldLesson'
+import SpacingLesson          from './lessons/02-spacing/SpacingLesson'
+import TypographyLesson       from './lessons/03-typography/TypographyLesson'
+import ColorsLesson           from './lessons/04-colors/ColorsLesson'
+import FlexboxLesson          from './lessons/05-flexbox/FlexboxLesson'
+import GridLesson             from './lessons/06-grid/GridLesson'
+import SizingLesson           from './lessons/07-sizing/SizingLesson'
+import BordersLesson          from './lessons/08-borders/BordersLesson'
+import ResponsiveLesson       from './lessons/09-responsive/ResponsiveLesson'
+import StatesLesson           from './lessons/10-states/StatesLesson'
+import DarkModeLesson         from './lessons/11-dark-mode/DarkModeLesson'
+import ComponentPatternsLesson from './lessons/12-component-patterns/ComponentPatternsLesson'
 // ────────────────────────────────────────────────────────────────────────
 
 type Lesson = {
@@ -21,18 +21,18 @@ type Lesson = {
 }
 
 const LESSONS: Lesson[] = [
-  { label: '01 Hello World',       Component: null },
-  { label: '02 Spacing',           Component: null },
-  { label: '03 Typography',        Component: null },
-  { label: '04 Colors',            Component: null },
-  { label: '05 Flexbox',           Component: null },
-  { label: '06 Grid',              Component: null },
-  { label: '07 Sizing',            Component: null },
-  { label: '08 Borders',           Component: null },
-  { label: '09 Responsive',        Component: null },
-  { label: '10 States',            Component: null },
-  { label: '11 Dark Mode',         Component: null },
-  { label: '12 Component Patterns', Component: null },
+  { label: '01 Hello World',       Component: HelloWorldLesson },
+  { label: '02 Spacing',           Component: SpacingLesson },
+  { label: '03 Typography',        Component: TypographyLesson },
+  { label: '04 Colors',            Component: ColorsLesson },
+  { label: '05 Flexbox',           Component: FlexboxLesson },
+  { label: '06 Grid',              Component: GridLesson },
+  { label: '07 Sizing',            Component: SizingLesson },
+  { label: '08 Borders',           Component: BordersLesson },
+  { label: '09 Responsive',        Component: ResponsiveLesson },
+  { label: '10 States',            Component: StatesLesson },
+  { label: '11 Dark Mode',         Component: DarkModeLesson },
+  { label: '12 Component Patterns', Component: ComponentPatternsLesson },
 ]
 
 export default function App() {

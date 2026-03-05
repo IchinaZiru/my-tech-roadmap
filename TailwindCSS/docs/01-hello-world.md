@@ -118,10 +118,10 @@ text-4xl   → 2.25rem (36px)
 
 ### 概念
 <!-- TailwindCSSとは何か、1〜3行で書く -->
-
+classNameの中にCSSを適応できる
 ### 最小実装
 ```tsx
-// 最もシンプルなTailwindクラスの使い方を書く
+<p className="text-blue-900 text-xl">Hello World</p>
 ```
 
 ### 実務での型

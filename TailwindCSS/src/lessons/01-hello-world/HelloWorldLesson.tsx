@@ -13,6 +13,11 @@ export default function HelloWorldLesson() {
     <div className="p-8">
       <h2 className="text-2xl font-bold mb-6">Lesson 01: Hello World</h2>
       {/* ここにコードを追加する */}
+      <p className="text-blue-900 text-xl">Hello World</p>
+      <p style={{ color: '#1e3a8a', fontSize: '1.25rem' }}>Hello with style</p>
+
+      <div className="bg-red-100">box</div>
+      <p className="font-bold">太字</p>
     </div>
   )
 }
