@@ -1,0 +1,24 @@
+# Zod
+Zod/node_modules
+Zod/dist
+Zod/.env
+
+# React
+React/node_modules
+React/dist
+React/.env
+
+# TailwindCSS
+TailwindCSS/node_modules
+TailwindCSS/dist
+TailwindCSS/.env
+
+# React-Router
+React-Router/node_modules
+React-Router/dist
+React-Router/.env
+
+# TypeScript
+TypeScript/node_modules
+TypeScript/dist
+TypeScript/.env
