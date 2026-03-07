@@ -17,6 +17,31 @@ export default function TabsLesson() {
 
       {/* Tabs コンポーネントを使う */}
       {/* ヒント: <Tabs defaultValue="tab1"> で開始タブを指定。TabsTrigger と TabsContent の value を一致させる */}
+      <Tabs defaultValue="profile">
+        <TabsList>
+          <TabsTrigger value="profile">プロフィール</TabsTrigger>
+          <TabsTrigger value="settings">設定</TabsTrigger>
+          <TabsTrigger value="notifications">通知</TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="profile">
+        <Card>
+          <CardHeader>
+            <CardTitle>プロフィール</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p> 名前 : 山田太郎</p>
+            <p> メール : yamada@example.com</p>
+          </CardContent>
+        </Card>
+        </TabsContent>
+        <TabsContent value="settings">
+          {/* 設定の内容 */}
+        </TabsContent>
+        <TabsContent value="notifications">
+          {/* 通知の内容 */}
+        </TabsContent>
+      </Tabs>
     </div>
   )
 }
