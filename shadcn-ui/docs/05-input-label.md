@@ -116,10 +116,13 @@ const [value, setValue] = useState('')
 
 ### 概念
 <!-- Label と Input の関連付けが重要な理由を1〜3行で書く -->
-
+複数Labelがある場合に人間にはつながって見えてもプログラム上は関連されていない場合がある為その対応策
 ### 最小実装
 ```tsx
-// Label + Input の最小構成を書く
+<Label htmlFor="email">メールアドレス</Label>
+          <Input id="email" type="email" placeholder="example@example.com"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}/>
 ```
 
 ### 実務での型
@@ -132,3 +135,4 @@ const [value, setValue] = useState('')
 
 ### 説明できる状態
 <!-- アクセシビリティの観点で Label を使う理由を説明できるようになったら書く -->
+該当labelタッチでInputできるようになる

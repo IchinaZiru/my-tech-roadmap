@@ -10,10 +10,11 @@
 import { useState } from 'react'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { Button } from '@/components/ui/button'
 
 export default function InputLabelLesson() {
   const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
   return (
     <div className="p-8">
@@ -22,9 +23,37 @@ export default function InputLabelLesson() {
       {/* フォームを作る */}
       <div className="max-w-sm space-y-4">
         {/* ヒント: Label の htmlFor と Input の id を同じ文字列にする */}
-
+        <div className="space-y-1">
+          <Label htmlFor='name'>名前</Label>
+          <Input
+          id='name'
+          type='text'
+          placeholder='名前を入力してください'
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="email">メールアドレス</Label>
+          <Input id="email" type="email" placeholder="example@example.com"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="password">パスワード</Label>
+          <Input id="password" type="password" placeholder="パスワードを入力してください"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
         {/* 入力した値をリアルタイム表示する */}
-        {name && <p className="text-sm text-gray-600">入力中: {name}</p>}
+        {(name || email || password) && <p className="text-sm text-gray-600">入力中: {name || email || password}</p>}
+        <div className="text-sm text-gray-600 space-y-1">
+          <p>名前: {name}</p>
+          <p>メール: {email}</p>
+          <p>パスワード: {password}</p>
+        </div>
       </div>
     </div>
   )
