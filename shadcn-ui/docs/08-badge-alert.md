@@ -121,7 +121,11 @@ import BadgeAlertLesson from './lessons/08-badge-alert/BadgeAlertLesson'
 
 ### shadcn/ui を見分けるチェックリスト
 <!-- 他のプロジェクトで shadcn/ui を使っているか確認する方法を書く -->
-
+components.json あり
+components/ui あり
+utils.ts に cn()
+button.tsx などで cva / cn
+package.json に Radix 系依存
 ### 最小実装
 ```tsx
 // Badge の最もシンプルな使い方を書く

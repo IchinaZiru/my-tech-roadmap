@@ -21,6 +21,10 @@ export default function BadgeAlertLesson() {
         <h3 className="text-lg font-semibold mb-4">Badge</h3>
         <div className="flex flex-wrap gap-2">
           {/* ここに各 variant の Badge を追加する */}
+          <Badge>Default</Badge>
+          <Badge variant="secondary">Secondary</Badge>
+          <Badge variant="destructive">Destructive</Badge>
+          <Badge variant="outline">Outline</Badge>
         </div>
       </section>
 
@@ -29,6 +33,15 @@ export default function BadgeAlertLesson() {
         <h3 className="text-lg font-semibold mb-4">Alert</h3>
         <div className="space-y-4 max-w-lg">
           {/* ここに Alert を追加する */}
+          <Alert>
+            <AlertTitle>タイトル</AlertTitle>
+            <AlertDescription>説明文</AlertDescription>
+          </Alert>
+
+          <Alert variant="destructive">
+            <AlertTitle>エラー</AlertTitle>
+            <AlertDescription>操作に失敗しました。</AlertDescription>
+          </Alert>
         </div>
       </section>
 
@@ -36,6 +49,15 @@ export default function BadgeAlertLesson() {
       <section>
         <h3 className="text-lg font-semibold mb-4">Badge in Card</h3>
         {/* ヒント: CardHeader に Badge を組み合わせてステータス付きカードを作る */}
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between">
+            <CardTitle>タスク管理アプリ</CardTitle>
+            <Badge variant="outline" className="mb-2">進行中</Badge>
+          </CardHeader>
+          <CardContent>
+              期限 : 2025/03/31
+            </CardContent>
+        </Card>
       </section>
     </div>
   )
