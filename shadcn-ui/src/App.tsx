@@ -1,14 +1,14 @@
 import { useState } from 'react'
 
 // ── レッスンを実装したら下のimportコメントを外す ──────────────────────
-// import HelloWorldLesson    from './lessons/01-hello-world/HelloWorldLesson'
-// import CnUtilityLesson     from './lessons/02-cn-utility/CnUtilityLesson'
-// import ButtonVariantsLesson from './lessons/03-button-variants/ButtonVariantsLesson'
-// import CardLesson          from './lessons/04-card/CardLesson'
-// import InputLabelLesson    from './lessons/05-input-label/InputLabelLesson'
-// import DialogLesson        from './lessons/06-dialog/DialogLesson'
-// import TabsLesson          from './lessons/07-tabs/TabsLesson'
-// import BadgeAlertLesson    from './lessons/08-badge-alert/BadgeAlertLesson'
+import HelloWorldLesson    from './lessons/01-hello-world/HelloWorldLesson'
+import CnUtilityLesson     from './lessons/02-cn-utility/CnUtilityLesson'
+import ButtonVariantsLesson from './lessons/03-button-variants/ButtonVariantsLesson'
+import CardLesson          from './lessons/04-card/CardLesson'
+import InputLabelLesson    from './lessons/05-input-label/InputLabelLesson'
+import DialogLesson        from './lessons/06-dialog/DialogLesson'
+import TabsLesson          from './lessons/07-tabs/TabsLesson'
+import BadgeAlertLesson    from './lessons/08-badge-alert/BadgeAlertLesson'
 // ────────────────────────────────────────────────────────────────────────
 
 type Lesson = {
@@ -17,14 +17,14 @@ type Lesson = {
 }
 
 const LESSONS: Lesson[] = [
-  { label: '01 Hello World',      Component: null },
-  { label: '02 cn() ユーティリティ', Component: null },
-  { label: '03 Button Variants',  Component: null },
-  { label: '04 Card',             Component: null },
-  { label: '05 Input & Label',    Component: null },
-  { label: '06 Dialog',           Component: null },
-  { label: '07 Tabs',             Component: null },
-  { label: '08 Badge & Alert',    Component: null },
+  { label: '01 Hello World',      Component: HelloWorldLesson },
+  { label: '02 cn() ユーティリティ', Component: CnUtilityLesson },
+  { label: '03 Button Variants',  Component: ButtonVariantsLesson },
+  { label: '04 Card',             Component: CardLesson },
+  { label: '05 Input & Label',    Component: InputLabelLesson },
+  { label: '06 Dialog',           Component: DialogLesson },
+  { label: '07 Tabs',             Component: TabsLesson },
+  { label: '08 Badge & Alert',    Component: BadgeAlertLesson },
 ]
 
 export default function App() {

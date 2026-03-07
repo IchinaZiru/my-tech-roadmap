@@ -91,19 +91,20 @@ import { Button } from '@/components/ui/button'
 
 ### 概念
 <!-- shadcn/ui とは何か、1〜3行で書く -->
-
+shadcnが提供しているコンポーネントをローカルにコピーして活用可能
+`npx`
 ### 最小実装
 ```tsx
-// Button コンポーネントの最もシンプルな使い方を書く
+<Button>shadcn/ui へようこそ！</Button>
 ```
 
 ### 実務での型
 ```tsx
-// onClick を持つボタンのパターンを書く
+<Button onClick={handleClick}>shadcn/ui へようこそ！</Button>
 ```
 
 ### 落とし穴
 <!-- よくあるミスと回避策 -->
-
+使用したいコンポーネントは必ずインストール
 ### 説明できる状態
 <!-- shadcn/ui がライブラリではない理由を口頭で説明できるようになったら書く -->

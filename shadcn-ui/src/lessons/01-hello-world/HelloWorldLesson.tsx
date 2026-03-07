@@ -9,13 +9,19 @@
 
 import { Button } from '@/components/ui/button'
 
+function handleClick() {
+  alert('ボタンがクリックされました！')
+}
+
 export default function HelloWorldLesson() {
   return (
-    <div className="p-8">
+    <div className="p-8 flex gap-4">
       <h2 className="text-2xl font-bold mb-6">Lesson 01: Hello World</h2>
 
       {/* ここにコードを追加する */}
       {/* ヒント: <Button> コンポーネントを使ってボタンを表示する */}
+      <Button>shadcn/ui へようこそ！</Button>
+      <Button onClick={handleClick}>shadcn/ui へようこそ！</Button>
     </div>
   )
 }
