@@ -19,12 +19,22 @@ export default function CnUtilityLesson() {
 
       {/* 例1: 複数クラスを結合する */}
       {/* ヒント: cn("クラス1", "クラス2") のように使う */}
-
-      {/* 例2: 条件付きクラスを切り替える */}
-      {/* ヒント: cn("基本クラス", isActive && "アクティブ時のクラス") */}
-
+      <div className={cn('px-4', 'bg-gray-200', 'px-8')}>
+        例1: 複数クラスを結合する
+      </div>
+      <div
+        className={cn(
+          'rounded-md border px-4 py-2 transition-colors',
+          isActive && 'border-blue-600 bg-blue-500 text-white font-semibold'
+        )}
+      >
+        条件付きクラスの例
+      </div>
       {/* ボタンで isActive を切り替える */}
-      <button onClick={() => setIsActive(!isActive)}>
+      <button
+        onClick={() => setIsActive(!isActive)}
+        className="rounded-md border px-4 py-2"
+      >
         切り替え（現在: {isActive ? 'ON' : 'OFF'}）
       </button>
     </div>
