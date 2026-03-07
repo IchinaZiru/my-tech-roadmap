@@ -26,6 +26,24 @@ export default function DialogLesson() {
 
       {/* Dialog コンポーネントを使う */}
       {/* ヒント: Dialog > DialogTrigger > Button の順。DialogContent は自動でポータルに表示される */}
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button>開く</Button>
+        </DialogTrigger>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>タイトル</DialogTitle>
+            <DialogDescription>説明文</DialogDescription>
+          </DialogHeader>
+          <p>ここにDialogContentの内容を記述します。</p>
+          <DialogFooter>
+            <DialogClose asChild>
+              <Button variant="outline">キャンセル</Button>
+            </DialogClose>
+            <Button>確認</Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   )
 }

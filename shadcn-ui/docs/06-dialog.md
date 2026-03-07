@@ -115,10 +115,14 @@ Dialog 独自のボタンではなく、自分の Button を使える。
 
 ### 概念
 <!-- Radix UI プリミティブと shadcn/ui の関係を1〜3行で書く -->
-
+`as Child`は親が自分の要素を出さず、子要素をそのまま親の役割付きで使う
+`Radix UI プリミティブ` は、見た目をほとんど持たない土台だけのUI部品
 ### 最小実装
 ```tsx
-// 最もシンプルな Dialog の使い方を書く
+<DialogTrigger asChild>
+  <Button>開く</Button>
+</DialogTrigger>
+
 ```
 
 ### 実務での型
