@@ -8,7 +8,7 @@
 //   [ ] onSubmit 関数でコンソールに data を表示する
 //   [ ] 送信後にコンソールで入力値が確認できる
 
-// import { useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 
 export default function HelloWorldLesson() {
   // useForm() を呼び出して handleSubmit と register を取り出す
