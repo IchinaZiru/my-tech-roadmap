@@ -116,10 +116,21 @@ import CardLesson from './lessons/04-card/CardLesson'
 
 ### 概念
 <!-- Compound Component パターンとは何か、1〜3行で書く -->
-
+複数の小コンポーネントを合成してひとつのコンポーネントに見せる
 ### 最小実装
 ```tsx
-// 最もシンプルな Card の使い方を書く
+      <Card>
+      <CardHeader>
+        <CardTitle>タイトル</CardTitle>
+        <CardDescription>説明</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p>本文コンテンツ</p>
+      </CardContent>
+      <CardFooter>
+        <Button>アクション</Button>
+      </CardFooter>
+      </Card>
 ```
 
 ### 実務での型

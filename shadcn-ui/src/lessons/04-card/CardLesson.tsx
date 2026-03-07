@@ -19,11 +19,36 @@ import { Button } from '@/components/ui/button'
 
 export default function CardLesson() {
   return (
-    <div className="p-8">
+    <div className="flex gap-4">
       <h2 className="text-2xl font-bold mb-6">Lesson 04: Card</h2>
 
       {/* ユーザープロフィールカードを作る */}
       {/* ヒント: Card > CardHeader > CardTitle + CardDescription の順に入れ子にする */}
+      <Card>
+      <CardHeader>
+        <CardTitle>タイトル</CardTitle>
+        <CardDescription>説明</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p>本文コンテンツ</p>
+      </CardContent>
+      <CardFooter>
+        <Button>アクション</Button>
+      </CardFooter>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>田中太郎</CardTitle>
+          <CardDescription>フロントエンドエンジニア</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p>ReactとTypeScriptが得意</p>
+        </CardContent>
+        <CardFooter>
+          <Button>プロフィール</Button>
+        </CardFooter>
+      </Card>
     </div>
   )
 }
