@@ -17,6 +17,8 @@ export default function RefetchingLesson() {
       return res.json()
     },
     // ここに refetchInterval や refetchOnWindowFocus を追加して試す
+    refetchInterval: 5000,
+    refetchOnWindowFocus: false,
   })
 
   return (
@@ -26,10 +28,21 @@ export default function RefetchingLesson() {
       <div className="flex items-center gap-4 mb-6">
         {/* 手動再取得ボタンをここに追加する（onClick で refetch() を呼ぶ） */}
         {/* isFetching が true のとき「取得中...」を表示する */}
+        <button onClick={refetch}>手動で再取得
+        {isFetching && <span className="text-gray-400">取得中...</span>}
+        </button>
       </div>
 
       {isPending && <p className="text-gray-400">読み込み中...</p>}
       {/* 投稿リスト（data）をここに表示する */}
+      <ul className="space-y-2">
+        {data?.map((post: any) => (
+          <li key={post.id} className="p-4 bg-white rounded shadow">
+            <h3 className="font-semibold">{post.title}</h3>
+            <p className="text-gray-600">{post.body}</p>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
