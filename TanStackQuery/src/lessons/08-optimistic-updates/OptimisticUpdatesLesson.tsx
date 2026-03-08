@@ -31,7 +31,33 @@ export default function OptimisticUpdatesLesson() {
   // onError: ロールバックする
   // onSettled: 最終的に整合性を取る
   // const likeMutation = useMutation({ ... })
+  const likeMutation = useMutation({
+    mutationFn: async (postId: number) => {
+      await new Promise((resolve) => setTimeout(resolve, 500))
+      return postId
+    },
+    onMutate: (postId: number) => {
+      const previousPosts = posts
 
+      setPosts((prev) =>
+        prev.map((post) =>
+          post.id === postId ? { ...post, likes: post.likes + 1 } : post
+        )
+      )
+
+      return { previousPosts }
+    },
+    onError: (_err, _postId, context) => {
+      if (context?.previousPosts) {
+        setPosts(context.previousPosts)
+      }
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries({ queryKey: ['posts'] })
+    },
+  })
+
+  
   return (
     <div className="p-8">
       <h2 className="text-2xl font-bold mb-6">Lesson 08: Optimistic Updates</h2>
@@ -46,6 +72,7 @@ export default function OptimisticUpdatesLesson() {
                 className="bg-red-100 text-red-600 px-3 py-1 rounded hover:bg-red-200 text-sm"
                 onClick={() => {
                   // ここで likeMutation.mutate(post.id) を呼ぶ
+                  likeMutation.mutate(post.id)
                 }}
               >
                 いいね
