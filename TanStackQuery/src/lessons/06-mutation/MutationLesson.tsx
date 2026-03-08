@@ -17,10 +17,24 @@ export default function MutationLesson() {
 
   // ここに useMutation を実装する
   // const mutation = useMutation({ mutationFn: ... })
+  const mutation = useMutation({
+    mutationFn: async (data: { title: string, body: string }) => {
+      const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+      if (!response.ok) {
+        throw new Error('Network response was not ok')
+      }
+      return response.json()
+    },
+  })
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // mutation.mutate({ title, body }) を呼ぶ
+    mutation.mutate({title, body})
   }
 
   return (
@@ -54,9 +68,15 @@ export default function MutationLesson() {
           投稿する
         </button>
       </form>
-
-      {/* mutation.isSuccess のとき、作成された投稿の情報を表示する */}
-      {/* mutation.data?.id なども表示してみる */}
+      {mutation.isPending && <p className="text-gray-400">送信中...</p>}
+      {mutation.isSuccess && (
+        <div className="mt-4 p-4 bg-green-100 text-green-700 rounded">
+          <p>投稿が正常に作成されました！</p>
+          <p>ID: {mutation.data?.id}</p>
+          <p>タイトル: {mutation.data?.title}</p>
+          <p>本文: {mutation.data?.body}</p>
+        </div>
+      )}
     </div>
   )
 }
