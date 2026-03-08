@@ -12,7 +12,7 @@ import { useQuery } from '@tanstack/react-query'
 
 export default function QueryKeysLesson() {
   // postId の状態管理をここに追加する
-  const postId = 1 // ← useState に変える
+  const [postId, setPostId] = useState(1)
 
   const { data, isPending } = useQuery({
     queryKey: ['post', postId], // postId が変わると別のキャッシュとして扱われる
@@ -27,9 +27,30 @@ export default function QueryKeysLesson() {
       <h2 className="text-2xl font-bold mb-6">Lesson 03: Query Keys</h2>
 
       {/* postId を切り替えるボタンをここに追加する（1・2・3番） */}
-
+        <div className="flex gap-4 mb-6">
+          <button
+            onClick={() => setPostId(1)}
+            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          >
+            投稿1
+          </button>
+          <button
+            onClick={() => setPostId(2)}
+            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          >
+            投稿2
+          </button>
+          <button
+            onClick={() => setPostId(3)}
+            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          >
+            投稿3
+          </button>
+        </div>
       {isPending && <p className="text-gray-400">読み込み中...</p>}
       {/* data.title と data.body をここに表示する */}
+      <p>Title: {data?.title}</p>
+      <p>Body: {data?.body}</p>
     </div>
   )
 }
