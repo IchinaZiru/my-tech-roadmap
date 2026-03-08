@@ -1,16 +1,16 @@
 import { useState } from 'react'
 
 // ── レッスンを実装したら下のimportコメントを外す ──────────────────────
-// import HelloWorldLesson       from './lessons/01-hello-world/HelloWorldLesson'
-// import LoadingErrorLesson     from './lessons/02-loading-error/LoadingErrorLesson'
-// import QueryKeysLesson        from './lessons/03-query-keys/QueryKeysLesson'
-// import StaleCacheLesson       from './lessons/04-stale-cache/StaleCacheLesson'
-// import RefetchingLesson       from './lessons/05-refetching/RefetchingLesson'
-// import MutationLesson         from './lessons/06-mutation/MutationLesson'
-// import InvalidationLesson     from './lessons/07-invalidation/InvalidationLesson'
-// import OptimisticUpdatesLesson from './lessons/08-optimistic-updates/OptimisticUpdatesLesson'
-// import DependentQueriesLesson from './lessons/09-dependent-queries/DependentQueriesLesson'
-// import PaginationLesson       from './lessons/10-pagination/PaginationLesson'
+import HelloWorldLesson       from './lessons/01-hello-world/HelloWorldLesson'
+import LoadingErrorLesson     from './lessons/02-loading-error/LoadingErrorLesson'
+import QueryKeysLesson        from './lessons/03-query-keys/QueryKeysLesson'
+import StaleCacheLesson       from './lessons/04-stale-cache/StaleCacheLesson'
+import RefetchingLesson       from './lessons/05-refetching/RefetchingLesson'
+import MutationLesson         from './lessons/06-mutation/MutationLesson'
+import InvalidationLesson     from './lessons/07-invalidation/InvalidationLesson'
+import OptimisticUpdatesLesson from './lessons/08-optimistic-updates/OptimisticUpdatesLesson'
+import DependentQueriesLesson from './lessons/09-dependent-queries/DependentQueriesLesson'
+import PaginationLesson       from './lessons/10-pagination/PaginationLesson'
 // ────────────────────────────────────────────────────────────────────────
 
 type Lesson = {
@@ -19,16 +19,16 @@ type Lesson = {
 }
 
 const LESSONS: Lesson[] = [
-  { label: '01 Hello World',        Component: null },
-  { label: '02 Loading & Error',    Component: null },
-  { label: '03 Query Keys',         Component: null },
-  { label: '04 Stale & Cache',      Component: null },
-  { label: '05 Refetching',         Component: null },
-  { label: '06 Mutation',           Component: null },
-  { label: '07 Invalidation',       Component: null },
-  { label: '08 Optimistic Updates', Component: null },
-  { label: '09 Dependent Queries',  Component: null },
-  { label: '10 Pagination',         Component: null },
+  { label: '01 Hello World',        Component: HelloWorldLesson },
+  { label: '02 Loading & Error',    Component: LoadingErrorLesson },
+  { label: '03 Query Keys',         Component: QueryKeysLesson },
+  { label: '04 Stale & Cache',      Component: StaleCacheLesson },
+  { label: '05 Refetching',         Component: RefetchingLesson },
+  { label: '06 Mutation',           Component: MutationLesson },
+  { label: '07 Invalidation',       Component: InvalidationLesson },
+  { label: '08 Optimistic Updates', Component: OptimisticUpdatesLesson },
+  { label: '09 Dependent Queries',  Component: DependentQueriesLesson },
+  { label: '10 Pagination',         Component: PaginationLesson },
 ]
 
 export default function App() {

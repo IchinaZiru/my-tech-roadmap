@@ -12,11 +12,20 @@ import { useQuery } from '@tanstack/react-query'
 export default function HelloWorldLesson() {
   // ここに useQuery を実装する
   // const { data } = useQuery({ ... })
+  const { data } = useQuery({
+    queryKey: ['post'],
+    queryFn: async () => {
+      const res = await fetch('https://jsonplaceholder.typicode.com/posts/1')
+      return res.json()
+    },
+  })
 
   return (
     <div className="p-8">
       <h2 className="text-2xl font-bold mb-6">Lesson 01: Hello World</h2>
       {/* 取得した data.title と data.body をここに表示する */}
+      <h3 className="text-xl font-semibold mb-2">{data?.title}</h3>
+      <p className="text-gray-700">{data?.body}</p>
     </div>
   )
 }
